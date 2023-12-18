@@ -1,0 +1,17 @@
+base: /
+languages:
+  -
+    title: German
+    enabled: true
+    languageId: 0
+    base: /
+    typo3Language: de
+    locale: de_DE.UTF-8
+    iso-639-1: de
+    navigationTitle: German
+    hreflang: de-de
+    direction: ltr
+    flag: de
+    websiteTitle: ''
+rootPageId: 1
+websiteTitle: ''

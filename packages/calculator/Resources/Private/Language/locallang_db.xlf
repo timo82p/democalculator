@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="EXT:calculator/Resources/Private/Language/locallang_db.xlf" date="2023-12-17T17:33:29Z" product-name="calculator">
+		<header/>
+		<body>
+			<trans-unit id="tx_calculator_domain_model_contributions" resname="tx_calculator_domain_model_contributions">
+				<source>Contributions</source>
+			</trans-unit>
+			<trans-unit id="tx_calculator_domain_model_contributions.description" resname="tx_calculator_domain_model_contributions.description">
+				<source>Contributions</source>
+			</trans-unit>
+			<trans-unit id="tx_calculator_domain_model_contributions.fullname" resname="tx_calculator_domain_model_contributions.fullname">
+				<source>Fullname</source>
+			</trans-unit>
+			<trans-unit id="tx_calculator_domain_model_contributions.fullname.description" resname="tx_calculator_domain_model_contributions.fullname.description">
+				<source>Fullname</source>
+			</trans-unit>
+			<trans-unit id="tx_calculator_domain_model_contributions.apiroute" resname="tx_calculator_domain_model_contributions.apiroute">
+				<source>Apiroute</source>
+			</trans-unit>
+			<trans-unit id="tx_calculator_domain_model_contributions.apiroute.description" resname="tx_calculator_domain_model_contributions.apiroute.description">
+				<source>Apiroute</source>
+			</trans-unit>
+			<trans-unit id="tx_calculator_domain_model_contributions.collection" resname="tx_calculator_domain_model_contributions.collection">
+				<source>Collection</source>
+			</trans-unit>
+			<trans-unit id="tx_calculator_domain_model_contributions.collection.description" resname="tx_calculator_domain_model_contributions.collection.description">
+				<source>Collection</source>
+			</trans-unit>
+			<trans-unit id="tx_calculator_domain_model_contribution" resname="tx_calculator_domain_model_contribution">
+				<source>Contribution</source>
+			</trans-unit>
+			<trans-unit id="tx_calculator_domain_model_contribution.description" resname="tx_calculator_domain_model_contribution.description">
+				<source>Contribution</source>
+			</trans-unit>
+			<trans-unit id="tx_calculator_domain_model_contribution.name" resname="tx_calculator_domain_model_contribution.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_calculator_domain_model_contribution.name.description" resname="tx_calculator_domain_model_contribution.name.description">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_calculator_domain_model_contribution.monity" resname="tx_calculator_domain_model_contribution.monity">
+				<source>Monity</source>
+			</trans-unit>
+			<trans-unit id="tx_calculator_domain_model_contribution.monity.description" resname="tx_calculator_domain_model_contribution.monity.description">
+				<source>Monity</source>
+			</trans-unit>
+			<trans-unit id="tx_calculator_domain_model_contribution.age" resname="tx_calculator_domain_model_contribution.age">
+				<source>Age</source>
+			</trans-unit>
+			<trans-unit id="tx_calculator_domain_model_contribution.age.description" resname="tx_calculator_domain_model_contribution.age.description">
+				<source>Age</source>
+			</trans-unit>
+			<trans-unit id="tx_calculator_pi1.name" resname="tx_calculator_pi1.name">
+				<source>Generator</source>
+			</trans-unit>
+			<trans-unit id="tx_calculator_pi1.description" resname="tx_calculator_pi1.description">
+				<source></source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

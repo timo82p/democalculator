@@ -1,0 +1,83 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Contributions:
+          Index.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+    <h3>Ermittlung der Beiträge ab bestimmten Alter </h3>
+    Selektierte REST Route: {selectedContribution.apiroute}<br>
+    <f:form method="post" action="search" id="calculateContributionByAge"  >
+    <div class="container">
+        <div class="row">
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <f:form.textfield type="number" class="form-control" name="age" value="{age}" />
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <f:form.submit value="Beitrag berechnen" class="btn btn-primary"/>
+                    </div>
+                </div>
+        </div>
+    </div>
+    </f:form>
+
+    <div id="targetContainer" class="alert alert-info d-none">
+
+
+    </div>
+
+</f:section>
+
+<f:section name="FooterAssets">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+             var form = document.getElementById("calculateContributionByAge");
+             var formUrl = form.getAttribute("action");
+             var targetContainer = document.getElementById("targetContainer");
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const formData = new FormData(form);
+
+
+                fetch(formUrl, {
+                    method: 'POST',
+                    body: formData
+                }).then(response => {
+                    return response.text();
+                }).then(function (html) {
+
+                    var parser = new DOMParser();
+                    var documentRes = parser.parseFromString(html, 'text/html');
+                    var result = documentRes.querySelector('.resultText');
+
+                    targetContainer.innerHTML = result.innerHTML;
+                    targetContainer.classList.replace('d-none', 'show');
+
+                }).catch(error => {
+
+                });
+
+            });
+
+        });
+
+    </script>
+
+</f:section>
+
+
+</html>

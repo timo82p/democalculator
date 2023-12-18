@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="EXT:calculator/Resources/Private/Language/locallang_csh_tx_calculator_domain_model_contributions.xlf" date="2023-12-17T17:33:29Z" product-name="calculator">
+		<header/>
+		<body>
+			<trans-unit id="fullname.description" resname="fullname.description">
+				<source>fullname</source>
+			</trans-unit>
+			<trans-unit id="apiroute.description" resname="apiroute.description">
+				<source>apiroute</source>
+			</trans-unit>
+			<trans-unit id="collection.description" resname="collection.description">
+				<source>collection</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

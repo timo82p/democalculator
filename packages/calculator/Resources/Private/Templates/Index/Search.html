@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Ajax" />
+
+<f:section name="content">
+    <div class="resultText">
+        <f:if condition="{searchResult.monity}">
+            <f:then>
+                <f:if condition="{age} > 100">
+                    <f:then>
+                        Ein bißchen sehr alt ab dem Zeitraum sind die Beträge schon nicht mehr bezahlbar.
+                    </f:then>
+                    <f:else>
+                        Bei einem Alter von <strong>{age}</strong> ergibt sich eine Beitrag von <b>{searchResult.monity->f:format.currency(thousandsSeparator: ',', currencySign: 'EUR')}</b>
+                    </f:else>
+                </f:if>
+
+            </f:then>
+            <f:else>
+                Es konnte keine Beitragsermittlung auf Basis des Alters von {age} Jahren ermittelt werden.
+            </f:else>
+        </f:if>
+    </div>
+</f:section>
