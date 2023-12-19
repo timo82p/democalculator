@@ -96,8 +96,12 @@ return [
                 'foreign_table' => 'tx_calculator_domain_model_contribution',
                 'foreign_field' => 'contributions',
                 'maxitems' => 9999,
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                    'enableCascadingDelete' => true,
+                ],
                 'appearance' => [
-                    'collapseAll' => 0,
+                    'collapseAll' => 1,
                     'levelLinksPosition' => 'top',
                     'showSynchronizationLink' => 1,
                     'showPossibleLocalizationRecords' => 1,
@@ -106,6 +110,6 @@ return [
             ],
 
         ],
-    
+
     ],
 ];

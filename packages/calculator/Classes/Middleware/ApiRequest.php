@@ -74,7 +74,6 @@ class ApiRequest implements MiddlewareInterface {
     public function getDataFromContributionByAge($collection,$age) {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tx_calculator_domain_model_contribution');
-        $queryBuilder->getRestrictions()->removeAll();
 
         $statement = $queryBuilder
             ->select('name','monity','age')
@@ -102,7 +101,6 @@ class ApiRequest implements MiddlewareInterface {
     public function getContributionsDataByRoute($path) {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('tx_calculator_domain_model_contributions');
-        $queryBuilder->getRestrictions()->removeAll();
 
 
         $statement = $queryBuilder

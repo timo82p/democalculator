@@ -57,6 +57,9 @@
 			<trans-unit id="tx_calculator_pi1.description" resname="tx_calculator_pi1.description">
 				<source></source>
 			</trans-unit>
+			<trans-unit id="backend.button.apiroute" resname="backend.button.apiroute">
+				<source>Vorschau API Daten</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
