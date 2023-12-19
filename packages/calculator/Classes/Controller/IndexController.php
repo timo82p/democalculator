@@ -90,11 +90,12 @@ class IndexController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
 
     /**
-     * action list
+     * action search
      *
      * @return \Psr\Http\Message\ResponseInterface
     */
     public function searchAction(): \Psr\Http\Message\ResponseInterface {
+        $requestedUri = $this->request->getUri();
 
         if ($this->request->hasArgument('age'))
             $requestAge = $this->request->getArgument('age');
@@ -104,36 +105,29 @@ class IndexController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             $selectedContributionID = $this->settings['selectedContribution'] ?? NULL;
 
         // klassische Methode über ne Extbase Query nur zum Testen
-        ####$data = $this->contributionRepository->findEntryByAge($selectedContribution,$requestAge);
-
-        $this->view->assign("age",$requestAge);
+        //$data = $this->contributionRepository->findEntryByAge($selectedContribution,$requestAge);
 
         // Zusammenbau der Route für den API Aufruf hinten rum
-        $route = $this->contributionsRepository->getAPIRouteByID($selectedContributionID);
-        $baseURL =  $this->request->getUri()->getScheme()."://".$this->request->getUri()->getHost();
+        $endPoint = $this->contributionsRepository->getAPIRouteByID($selectedContributionID);
+        $queryParams = null;
+
+        if (!empty($endPoint)) {
+            $queryParams = $requestedUri->getScheme()."://".$requestedUri->getHost();
+            $queryParams .= $endPoint.'?'.GeneralUtility::implodeArrayForUrl("",array("age"=>$requestAge));
+        }
 
 
         try {
-            $apiRequest = GeneralUtility::getUrl($baseURL.$route.'?age='.$requestAge);
+            $apiRequest = GeneralUtility::getUrl($queryParams);
 
             if (!empty($apiRequest))
-                $apiReponse = json_decode($apiRequest,true);
+                list($apiResponse) = json_decode($apiRequest,true);
 
         } catch (\Exception $e) {
             echo 'Exception abgefangen: ',  $e->getMessage(), "\n";
         }
-
-        if (is_array($apiReponse) && !empty($apiReponse) ) {
-            $lastEntry = count($apiReponse)-1;
-            $this->view->assign("searchResult",$apiReponse[$lastEntry]);
-        }
-
-        /*
-        if (is_object($data) && $data->count() > 0) {
-            $lastEntry = $data->count()-1;
-            $this->view->assign("searchResult",$data[$lastEntry]);
-        }
-        */
+        $this->view->assign("searchResult",$apiResponse);
+        $this->view->assign("age",$requestAge);
 
         return $this->htmlResponse();
 
