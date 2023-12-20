@@ -34,3 +34,16 @@ defined('TYPO3') || die();
        }'
     );
 })();
+### Add own Button to the View
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['Backend\Template\Components\ButtonBar']['getButtonsHook']['calculator'] = T3einfachmacher\Calculator\Hooks\Backend\ButtonBar::class.'->getButtons';
+
+$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+$iconRegistry->registerIcon(
+    'calculator-icon-api',
+    \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+    ['source' => 'EXT:calculator/Resources/Public/Icons/api_icon32.png']
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+    '@import "EXT:calculator/Configuration/Tsconfig/page.tsconfig"'
+);
