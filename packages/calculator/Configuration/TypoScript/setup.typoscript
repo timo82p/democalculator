@@ -21,6 +21,53 @@ plugin.tx_calculator_pi1 {
     }
 }
 
+lib.calculator.options = COA
+lib.calculator.options {
+    10 = CONTENT
+    10.table = tx_calculator_domain_model_contributions
+    10.select {
+          pidInList = {$plugin.tx_calculator_pi1.persistence.storagePid}
+          where.dataWrap = tx_calculator_domain_model_contributions.uid={current:1}
+          leftjoin (
+                tx_calculator_domain_model_contribution ON tx_calculator_domain_model_contribution.contributions = tx_calculator_domain_model_contributions.uid
+          )
+          orderBy = tx_calculator_domain_model_contribution.age desc
+    }
+
+    10.stdWrap {
+        preCObject = TEXT
+        preCObject.wrap = <h5>|</h5>
+        preCObject.value (
+           Zulässige Werte Matrix
+        )
+    }
+
+
+    10.renderObj = COA
+    10.renderObj {
+
+        10 = COA
+        10 {
+            wrap = <dl class="row mb-0">|</dl>
+                10 = TEXT
+                10.wrap = <dt class="col-sm-3">|</dt>
+                10.field = name
+                20 = TEXT
+                20.field = monity
+                20 {
+                   numberFormat = 1
+                   numberFormat.decPoint = ,
+                   numberFormat.thousandsSep = .
+                   numberFormat.decimals = 2
+                }
+                20.noTrimWrap = |<dd class="col-sm-9">Beitrag: | EUR</dd>|
+
+
+        }
+
+    }
+}
+
 # these classes are only used in auto-generated templates
 plugin.tx_calculator._CSS_DEFAULT_STYLE (
     textarea.f3-form-error {

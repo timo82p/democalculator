@@ -13,7 +13,9 @@
                         Bei einem Alter von <strong>{age}</strong> ergibt sich eine Beitrag von <b>{searchResult.monity->f:format.currency(thousandsSeparator: ',', currencySign: 'EUR')}</b>
                     </f:else>
                 </f:if>
-
+                <div>
+                {contributionID->f:cObject(typoscriptObjectPath: 'lib.calculator.options' )}
+                </div>
             </f:then>
             <f:else>
                 Es konnte keine Beitragsermittlung auf Basis des Alters von {age} Jahren ermittelt werden.

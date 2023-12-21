@@ -128,6 +128,7 @@ class IndexController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         }
         $this->view->assign("searchResult",$apiResponse);
         $this->view->assign("age",$requestAge);
+        $this->view->assign("contributionID",$selectedContributionID);
 
         return $this->htmlResponse();
 
