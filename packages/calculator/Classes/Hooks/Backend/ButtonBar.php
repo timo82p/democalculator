@@ -97,7 +97,6 @@ class ButtonBar {
      * Render einer BackendRoute für den jeweiligen Controller
      * @param $dataUid
      * @return mixed
-     * @author Timo Prüssing <timo.pruessing@komsa.de>
      */
     public function renderBackendRoute($route,$dataUid) {
         $uriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
