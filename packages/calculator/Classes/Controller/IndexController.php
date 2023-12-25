@@ -64,9 +64,9 @@ class IndexController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     /**
      * action index
      *
-     * @return ResponseInterface
+     * @return \Psr\Http\Message\ResponseInterface
      */
-    public function indexAction(): ResponseInterface
+    public function indexAction(): \Psr\Http\Message\ResponseInterface
     {
         if (!empty($this->settings['selectedContribution']))
             $selectedContribution = $this->settings['selectedContribution'] ?? NULL;
