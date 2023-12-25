@@ -299,6 +299,12 @@ AddDefaultCharset utf-8
 	#RewriteCond %{HTTP_HOST} ^www\.example\.com$
 	#RewriteRule .? - [E=TYPO3_CONTEXT:Production]
 
+    # Force trailing slash in the API Route
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} ^/api/v(\d+)/(.*)$
+    RewriteRule !/$ %{REQUEST_URI}/ [L,R]
+
+
 	# Rule for versioned static files, configured through:
 	# - $GLOBALS['TYPO3_CONF_VARS']['BE']['versionNumberInFilename']
 	# - $GLOBALS['TYPO3_CONF_VARS']['FE']['versionNumberInFilename']

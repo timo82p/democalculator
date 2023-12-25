@@ -47,3 +47,6 @@ $iconRegistry->registerIcon(
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
     '@import "EXT:calculator/Configuration/Tsconfig/page.tsconfig"'
 );
+
+// Register the class to be available in 'eval' of TCA
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals'][\T3einfachmacher\Calculator\Hooks\Evaluation\ApirouteEval::class] = "";

@@ -10,22 +10,22 @@
 				<source>Contributions</source>
 			</trans-unit>
 			<trans-unit id="tx_calculator_domain_model_contributions.fullname" resname="tx_calculator_domain_model_contributions.fullname">
-				<source>Fullname</source>
+				<source>Vollständige Bezeichnung</source>
 			</trans-unit>
 			<trans-unit id="tx_calculator_domain_model_contributions.fullname.description" resname="tx_calculator_domain_model_contributions.fullname.description">
-				<source>Fullname</source>
+				<source>Dient zur Übersicht in den Listenansichten</source>
 			</trans-unit>
 			<trans-unit id="tx_calculator_domain_model_contributions.apiroute" resname="tx_calculator_domain_model_contributions.apiroute">
-				<source>Apiroute</source>
+				<source>URL der internen REST Methode </source>
 			</trans-unit>
 			<trans-unit id="tx_calculator_domain_model_contributions.apiroute.description" resname="tx_calculator_domain_model_contributions.apiroute.description">
-				<source>Apiroute</source>
+				<source>Die Route muss mit /api/v(\d+)/ anfangen, ansonsten erfolgt automatische Korrektur</source>
 			</trans-unit>
 			<trans-unit id="tx_calculator_domain_model_contributions.collection" resname="tx_calculator_domain_model_contributions.collection">
-				<source>Collection</source>
+				<source>Wertezuordnung für die Altersberechnung</source>
 			</trans-unit>
 			<trans-unit id="tx_calculator_domain_model_contributions.collection.description" resname="tx_calculator_domain_model_contributions.collection.description">
-				<source>Collection</source>
+				<source>Die einzelnen Alter zu Beiträge Ranges als IRRE Elemente realisiert</source>
 			</trans-unit>
 			<trans-unit id="tx_calculator_domain_model_contribution" resname="tx_calculator_domain_model_contribution">
 				<source>Contribution</source>
@@ -40,19 +40,19 @@
 				<source>Name</source>
 			</trans-unit>
 			<trans-unit id="tx_calculator_domain_model_contribution.monity" resname="tx_calculator_domain_model_contribution.monity">
-				<source>Monity</source>
+				<source>Beitrag</source>
 			</trans-unit>
 			<trans-unit id="tx_calculator_domain_model_contribution.monity.description" resname="tx_calculator_domain_model_contribution.monity.description">
-				<source>Monity</source>
+				<source>Beitrag als Integerwert hier</source>
 			</trans-unit>
 			<trans-unit id="tx_calculator_domain_model_contribution.age" resname="tx_calculator_domain_model_contribution.age">
-				<source>Age</source>
+				<source>Alter</source>
 			</trans-unit>
 			<trans-unit id="tx_calculator_domain_model_contribution.age.description" resname="tx_calculator_domain_model_contribution.age.description">
-				<source>Age</source>
+				<source>Alter</source>
 			</trans-unit>
 			<trans-unit id="tx_calculator_pi1.name" resname="tx_calculator_pi1.name">
-				<source>Generator</source>
+				<source>Beitrags-Generator</source>
 			</trans-unit>
 			<trans-unit id="tx_calculator_pi1.description" resname="tx_calculator_pi1.description">
 				<source></source>

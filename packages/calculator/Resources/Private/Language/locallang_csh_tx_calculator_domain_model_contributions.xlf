@@ -4,13 +4,13 @@
 		<header/>
 		<body>
 			<trans-unit id="fullname.description" resname="fullname.description">
-				<source>fullname</source>
+				<source>Vollständiger Name der Methode</source>
 			</trans-unit>
 			<trans-unit id="apiroute.description" resname="apiroute.description">
-				<source>apiroute</source>
+				<source>API Route für diesen Dienst</source>
 			</trans-unit>
 			<trans-unit id="collection.description" resname="collection.description">
-				<source>collection</source>
+				<source>Sammlung an Berechnungen</source>
 			</trans-unit>
 		</body>
 	</file>

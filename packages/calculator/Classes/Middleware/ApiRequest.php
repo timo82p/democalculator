@@ -20,7 +20,7 @@ class ApiRequest implements MiddlewareInterface {
      * Default Route für diese RestRoute
      * @var string
      */
-    public $defaultRoute = "/api/v1";
+    public $defaultRoute = "/api/";
 
 
 
