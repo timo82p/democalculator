@@ -3,6 +3,8 @@ return [
     'ctrl' => [
         'title' => 'LLL:EXT:calculator/Resources/Private/Language/locallang_db.xlf:tx_calculator_domain_model_contributions',
         'label' => 'fullname',
+        'label_userFunc' => \T3einfachmacher\Calculator\Hooks\Backend\TableCustomTitles::class."->contributionTitle",
+        'label_alt_force' => true,
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -72,7 +74,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim',
+                'eval' => 'trim,required',
                 'default' => ''
             ],
         ],
@@ -83,7 +85,7 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim',
+                'eval' => 'trim,'.\T3einfachmacher\Calculator\Hooks\Evaluation\ApirouteEval::class.',unique',
                 'default' => ''
             ],
         ],

@@ -3,7 +3,7 @@
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 'Calculator',
 'Pi1',
-'Calculator Contributions'
+'Beitrags-Rechner Alter'
 );
 
 $pluginSignature = 'calculator_pi1';

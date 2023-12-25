@@ -64,9 +64,9 @@ class IndexController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     /**
      * action index
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
-    public function indexAction(): \Psr\Http\Message\ResponseInterface
+    public function indexAction(): ResponseInterface
     {
         if (!empty($this->settings['selectedContribution']))
             $selectedContribution = $this->settings['selectedContribution'] ?? NULL;
@@ -116,7 +116,7 @@ class IndexController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             $queryParams .= $endPoint.'?'.GeneralUtility::implodeArrayForUrl("",array("age"=>$requestAge));
         }
 
-
+        $apiResponse = null;
         try {
             $apiRequest = GeneralUtility::getUrl($queryParams);
 

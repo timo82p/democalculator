@@ -23,6 +23,7 @@
                                 </numIndex>
                             </items>
                             <foreign_table>tx_calculator_domain_model_contributions</foreign_table>
+                            <foreign_table_where>AND tx_calculator_domain_model_contributions.hidden = 0 AND tx_calculator_domain_model_contributions.deleted = 0</foreign_table_where>
                         </config>
                     </settings.selectedContribution>
                 </el>
